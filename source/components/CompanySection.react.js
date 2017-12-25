@@ -34,8 +34,7 @@ class CompanySection extends React.Component {
 		this.setState(CompanyHelper.constructOnAddState());
 	}
 	
-	onInsertCompany() {
-		let company = CompanyHelper.constructCompanyFromFields(document);
+	onInsertCompany(company) {
 		CompanyActionCreators.insertCompany(company);
 		
 		this.setState(CompanyHelper.constructOnInsertCompany());
@@ -45,8 +44,7 @@ class CompanySection extends React.Component {
 		this.setState(CompanyHelper.constructOnEdit(id));
 	}
 
-	onUpdateCompany(id) {
-		let company = CompanyHelper.constructCompanyFromFields(document);
+	onUpdateCompany(id, company) {
 		CompanyActionCreators.updateCompany(id, company);
 		
 		this.setState(CompanyHelper.constructOnUpdateCompany());
@@ -66,6 +64,7 @@ class CompanySection extends React.Component {
 	  let page;
 
 	  if(this.state.mode === "list") {
+             let headers = ["Col11", "Col2", "Col3"];
 	     page = (
 		    <section>
 			  <Button onClick={this.onAdd} value="Add Company"/><br/><br/>
@@ -78,7 +77,7 @@ class CompanySection extends React.Component {
 	  } else if(this.state.mode === "add") {
 	     page = (
 		    <section>
-				<AddCompanyForm onSubmit={this.onInsertCompany} onCancel={this.onCancelForm}/>
+				<AddCompanyForm onSubmit={this.onInsertCompany} onCancel={this.onCancelForm} />
 			</section>  
 		 );	  
 	  } else if(this.state.mode === "edit") {

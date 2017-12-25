@@ -5,12 +5,13 @@ function constructGetInitialState() {
 };
 
 export default {
-	constructCompanyFromFields(document) {
+	constructCompanyFromFields(_this) {
 		let company = {
-			company: document.getElementById("company").value,
-			country: document.getElementById("country").value,
-			contact: document.getElementById("contact").value
+			company: _this.companyInput.value,
+			country: _this.countryInput.value,
+			contact: _this.contactInput.value
 		}
+		console.log(JSON.stringify(company));
 		return company;		
 	},
 	

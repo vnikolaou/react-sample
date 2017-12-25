@@ -5,7 +5,7 @@ var source = require('vinyl-source-stream');
 
 gulp.task('default', function () {
   return browserify('./source/app.js')
-        .transform(babelify, {presets: ["es2015", "react"]})
+        .transform(babelify, {presets: ["es2015", "flow", "react"]})
         .bundle()
         .pipe(source('sample.js'))
         .pipe(gulp.dest('./build/'));
