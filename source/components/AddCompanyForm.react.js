@@ -13,6 +13,12 @@ class AddCompanyForm extends React.Component {
   componentDidMount() {
     this.companyInput.focus(); // a good case for using ref
     this.submitButton.setColor('green');  // valid but can also be done via props and by delegating responsibility to button itself
+    this.$countryInput = $(this.countryInput);
+    this.$countryInput.pickadate();
+  }
+
+  componentWillUnmount() {
+  //  this.$countryInput.chosen('destroy');
   }
 
     submit() {

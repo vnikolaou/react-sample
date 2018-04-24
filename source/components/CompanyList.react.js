@@ -3,11 +3,12 @@ import Button from './Button.react';
 import CompanyStore from '../stores/CompanyStore';
 import PropTypes from 'prop-types';
 
+
 class CompanyList extends React.Component { 
 	constructor(props) {
 	   super(props);
 	}
-  
+
 	render() {
 	  const companies = CompanyStore.getCompanies();
 	  
@@ -26,6 +27,8 @@ class CompanyList extends React.Component {
 			  </tr>
            );
       });
+          
+	  
 	  return (
 			<table>
 			  <thead>

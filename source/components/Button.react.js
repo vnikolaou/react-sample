@@ -8,7 +8,7 @@ class Button extends React.Component {
 	   this.onClick = this.onClick.bind(this);  // this is required since it is event handler 
 	   this.setColor = this.setColor.bind(this); // this seems to be not required actually 
 	}
-	
+
 	onClick(event) {
 		this.props.onClick.apply(this, Array.isArray(this.props.args) ? 
 			this.props.args: [this.props.args]);
